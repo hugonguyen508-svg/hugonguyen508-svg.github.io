@@ -43,6 +43,37 @@
     .flip-front, .flip-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
     .flip-back { transform: rotateY(180deg); }
   </style>
+
+<!-- LEA_TRIAL_GATE_2026-11-07 -->
+<script>
+(function(){
+  // Trial: hide PRO prices + VietQR until 2026-11-09 00:00 Asia/Saigon (UTC+7)
+  var openAt = Date.parse('2026-11-08T17:00:00Z'); // 09/11 00:00 +07
+  var trial = Date.now() < openAt;
+  if (!trial) return;
+  document.documentElement.classList.add('trial-mode-prelaunch');
+  var style = document.createElement('style');
+  style.textContent = '.trial-mode-prelaunch .pro-price, .trial-mode-prelaunch [onclick*="openCheckoutModal"], .trial-mode-prelaunch #checkout-modal, .trial-mode-prelaunch img[alt*="VietQR"] { display: none !important; }';
+  document.head.appendChild(style);
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('span').forEach(function(el){
+      var t = (el.textContent||'').trim();
+      if (/^(299\.000đ|249\.000đ)$/.test(t)) { el.classList.add('pro-price'); el.style.display='none'; }
+    });
+    document.querySelectorAll('button').forEach(function(b){
+      var t = b.textContent||'';
+      if (t.indexOf('Sở Hữu Ngay PRO_PACK') !== -1 || t.indexOf('299.000') !== -1 || t.indexOf('249.000') !== -1) {
+        b.style.display = 'none';
+        var note = document.createElement('p');
+        note.className = 'text-center text-sm text-amber-300 mt-2';
+        note.textContent = 'Mở bán 00:00 ngày 09/11 · Hiện chỉ TẢI MIỄN PHÍ FREE_KIT';
+        b.parentNode && b.parentNode.appendChild(note);
+      }
+    });
+  });
+})();
+</script>
+
 </head>
 <body class="antialiased selection:bg-blue-600 selection:text-white">
 
