@@ -25,8 +25,8 @@
 **299.000đ** (giá gốc ~~499.000đ~~) — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ ưu đãi Early Bird** (gửi email tới <hugonguyen508@gmail.com>). Nội dung (số liệu đã kiểm chứng):
 
 - **2.022 thẻ** từ vựng & cấu trúc giai đoạn 1 — từng nghĩa đã kiểm tra thủ công.
-- **108 thẻ phim** cho **118 từ nối & thái độ**, trích câu thật từ bản tin truyền hình Pháp (TV5MONDE, France 24, Arte, franceinfo…) — 10 từ đang tìm thêm ngữ liệu.
-- **Tổng cộng: 2.130 thẻ Anki.**
+- **114 thẻ phim** cho **118 từ nối & thái độ**, trích câu thật từ bản tin truyền hình Pháp (TV5MONDE, France 24, Arte, franceinfo…) — 4 từ đang tìm thêm ngữ liệu (à cause de, bien que/quoique, dans le but de, reste à savoir si).
+- **Tổng cộng: 2.136 thẻ Anki.**
 
 ## Khu vực 2 — Huyết Học & Truyền Máu Chuyên Sâu
 
@@ -66,9 +66,9 @@ Gửi email tới <hugonguyen508@gmail.com> (tiêu đề ghi rõ tài liệu mu�
 ## Minh bạch số liệu & trạng thái
 
 - Bộ thẻ giai đoạn 1: **2.022 thẻ** — đếm trực tiếp từ file `deck-phase1-v4.1.csv` (2.026 dòng, trừ 4 dòng header Anki `#separator`, `#html`, `#columns`, `#tags`).
-- Thẻ phim: **108 thẻ / 118 từ** (10 từ còn thiếu) — đếm từ các file kiểm soát `controle-A..F.tsv` (10 + 25 + 20 + 20 + 25 + 8).
+- Thẻ phim: **114 thẻ / 118 từ** (4 từ còn thiếu: à cause de, bien que/quoique, dans le but de, reste à savoir si) — đếm từ các file kiểm soát `controle-A..G.tsv` (10 + 25 + 20 + 20 + 25 + 8 + 6).
 - Các mục “Sắp có” chưa có file tải xuống — trang không dùng link giả, không bịa giá bán, không bịa đánh giá/testimonial.
-- Số liệu chuẩn hóa: tổng **2.130 thẻ Anki** (2.022 thẻ giai đoạn 1 + 108 thẻ phim) theo lệnh phê duyệt 2026-11-06.
+- Số liệu chuẩn hóa: tổng **2.136 thẻ Anki** (2.022 thẻ giai đoạn 1 + 114 thẻ phim, đã gộp Lot G 6 thẻ) theo lệnh phê duyệt 2026-11-07.
 
 ## Cấu trúc file
 
