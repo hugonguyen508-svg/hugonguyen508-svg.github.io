@@ -16,17 +16,15 @@
 |---|---|---|
 | Cẩm nang chiến thuật 3 bước đọc hiểu (quy trình v4.1, bản dành cho người học) | ✅ Có file thật | [`assets/cam-nang-chien-thuat-doc-hieu-delf-b2-v4.1.md`](assets/cam-nang-chien-thuat-doc-hieu-delf-b2-v4.1.md) |
 | Bộ 30 thẻ Anki DELF B2 mẫu | ✅ Có file thật — trong bộ quà miễn phí (.zip) | [Tải .zip](https://drive.google.com/file/d/1AYbHRsmaH0BRLbFUeajLLZ9mX4_BIim0/view?usp=sharing) |
-| Hướng dẫn asbplayer (khai thác câu từ phim làm thẻ Anki) | ✅ Có trong bộ quà miễn phí (.zip) — bản phác thảo (DRAFT) | [Tải .zip](https://drive.google.com/file/d/1AYbHRsmaH0BRLbFUeajLLZ9mX4_BIim0/view?usp=sharing) |
 
 ⬇ **Tải trọn bộ quà miễn phí DELF B2 (.zip — 0đ):** [FREE_KIT_01_DELF_B2.zip](https://drive.google.com/file/d/1AYbHRsmaH0BRLbFUeajLLZ9mX4_BIim0/view?usp=sharing)
 
 ### Bản Full — Trọn bộ Master Deck Anki DELF B2–C1
 
-**299.000đ** (giá gốc ~~499.000đ~~) — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ ưu đãi Early Bird** (gửi email tới <hugonguyen508@gmail.com>). Nội dung (số liệu đã kiểm chứng):
+**299.000đ** — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ chỗ** (gửi email tới <hugonguyen508@gmail.com>). Nội dung (số liệu đã kiểm chứng):
 
 - **2.022 thẻ** từ vựng & cấu trúc giai đoạn 1 — từng nghĩa đã kiểm tra thủ công.
-- **114 thẻ phim** cho **118 từ nối & thái độ**, trích câu thật từ bản tin truyền hình Pháp (TV5MONDE, France 24, Arte, franceinfo…) — 4 từ đang tìm thêm ngữ liệu (à cause de, bien que/quoique, dans le but de, reste à savoir si).
-- **Tổng cộng: 2.136 thẻ Anki.**
+- **Tổng cộng: 2.022 thẻ Anki tự soạn (Phase-1 v4.1), audio TTS.**
 
 ## Khu vực 2 — Huyết Học & Truyền Máu Chuyên Sâu
 
@@ -41,7 +39,7 @@
 
 ### Bản Full — Bộ Flashcard Anki Huyết học – Truyền máu & Cẩm nang tóm tắt
 
-**249.000đ** (giá gốc ~~399.000đ~~) — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ ưu đãi Early Bird** (gửi email tới <hugonguyen508@gmail.com>). Bộ flashcard Anki và cẩm nang tóm tắt cơ chế bệnh sinh / phác đồ điều trị chuẩn y văn đang được biên soạn.
+**249.000đ** — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ chỗ** (gửi email tới <hugonguyen508@gmail.com>). Bộ flashcard Anki và cẩm nang tóm tắt cơ chế bệnh sinh / phác đồ điều trị chuẩn y văn đang được biên soạn.
 
 ## Theo dõi Dr. Nguyen Hugo
 
@@ -66,9 +64,7 @@ Gửi email tới <hugonguyen508@gmail.com> (tiêu đề ghi rõ tài liệu mu�
 ## Minh bạch số liệu & trạng thái
 
 - Bộ thẻ giai đoạn 1: **2.022 thẻ** — đếm trực tiếp từ file `deck-phase1-v4.1.csv` (2.026 dòng, trừ 4 dòng header Anki `#separator`, `#html`, `#columns`, `#tags`).
-- Thẻ phim: **114 thẻ / 118 từ** (4 từ còn thiếu: à cause de, bien que/quoique, dans le but de, reste à savoir si) — đếm từ các file kiểm soát `controle-A..G.tsv` (10 + 25 + 20 + 20 + 25 + 8 + 6).
 - Các mục “Sắp có” chưa có file tải xuống — trang không dùng link giả, không bịa giá bán, không bịa đánh giá/testimonial.
-- Số liệu chuẩn hóa: tổng **2.136 thẻ Anki** (2.022 thẻ giai đoạn 1 + 114 thẻ phim, đã gộp Lot G 6 thẻ) theo lệnh phê duyệt 2026-11-07.
 
 ## Cấu trúc file
 
