@@ -1,571 +1,116 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Nguyen Hugo | Hệ Thống Tư Duy Nguyên Bản Huyết Học & DELF B2–C1</title>
-  <meta name="description" content="Hệ thống học tập độc bản kết hợp Tư duy Nguyên bản (First Principles), Ẩn dụ Feynman & Spaced Repetition (Anki) dành cho DELF B2-C1 và Huyết học Lâm sàng." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace'],
-          },
-          colors: {
-            brand: {
-              dark: '#0B0F19',
-              card: '#111827',
-              border: '#1F2937',
-              french: '#3B82F6',
-              hemato: '#EF4444',
-              gold: '#F59E0B',
-              emerald: '#10B981'
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body { background-color: #0B0F19; color: #F9FAFB; }
-    .glass-card { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
-    .glow-french { box-shadow: 0 0 35px -5px rgba(59, 130, 246, 0.25); }
-    .glow-hemato { box-shadow: 0 0 35px -5px rgba(239, 68, 68, 0.25); }
-    .perspective { perspective: 1000px; }
-    .flip-card-inner { transition: transform 0.6s; transform-style: preserve-3d; }
-    .flipped { transform: rotateY(180deg); }
-    .flip-front, .flip-back { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-    .flip-back { transform: rotateY(180deg); }
-  </style>
-
-<!-- LEA_TRIAL_GATE_2026-11-07 -->
-<script>
-(function(){
-  // Sales postponed (Hugo, 08/11): PRO prices/VietQR hidden indefinitely; FREE_KIT only. Remove only when Hugo sets a launch date.
-  document.documentElement.classList.add('trial-mode-prelaunch');
-  var style = document.createElement('style');
-  style.textContent = '.trial-mode-prelaunch .pro-price, .trial-mode-prelaunch [onclick*="openCheckoutModal"], .trial-mode-prelaunch #checkout-modal, .trial-mode-prelaunch img[alt*="VietQR"], .trial-mode-prelaunch #upsell-upgrade-btn { display: none !important; }';
-  document.head.appendChild(style);
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('span').forEach(function(el){
-      var t = (el.textContent||'').trim();
-      if (/^(299\.000đ|249\.000đ)$/.test(t)) { el.classList.add('pro-price'); el.style.display='none'; }
-    });
-    document.querySelectorAll('button').forEach(function(b){
-      var t = b.textContent||'';
-      if (t.indexOf('Sở Hữu Ngay PRO_PACK') !== -1 || t.indexOf('299.000') !== -1 || t.indexOf('249.000') !== -1) {
-        b.style.display = 'none';
-        var note = document.createElement('p');
-        note.className = 'text-center text-sm text-amber-300 mt-2';
-        note.textContent = 'Hiện chỉ nhận TẢI MIỄN PHÍ FREE_KIT';
-        b.parentNode && b.parentNode.appendChild(note);
-      }
-    });
-  });
-})();
-</script>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Nguyen Hugo · Nhật ký tự luyện DELF B2 của một bác sĩ</title>
+<meta name="description" content="Mỗi ngày một lỗi thật khi tự ôn DELF B2, cách chẩn đoán nó và tấm thẻ để không mắc lại. Nhận bộ khởi động miễn phí.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#0b0f17;color:#d6dbe4;line-height:1.6}
+a{color:#7cc4ff}.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+.top{background:#13233a;color:#ffd27a;text-align:center;font-size:14px;padding:10px 14px;font-weight:600}
+header{padding:48px 0 28px;text-align:center}h1{font-size:clamp(28px,6vw,44px);line-height:1.2;color:#fff;margin:0 0 16px}
+.sub{font-size:18px;max-width:680px;margin:0 auto 26px}
+.btn{display:inline-block;padding:14px 22px;border-radius:12px;font-weight:700;text-decoration:none;margin:6px;font-size:16px;border:0;cursor:pointer}
+.b1{background:#2f7cf6;color:#fff}.b2{background:#1c2433;color:#fff;border:1px solid #33405a}
+section{background:#121926;border:1px solid #1f2a3d;border-radius:16px;padding:24px;margin:0 0 22px}
+h2{color:#fff;font-size:22px;margin:0 0 12px}ul{padding-left:20px}
+label{display:block;font-weight:600;margin:14px 0 6px;color:#fff}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #33405a;background:#0b0f17;color:#fff;font-size:16px}
+textarea{min-height:90px}.hint{font-size:13px;color:#8a94a8}.msg{margin-top:14px;padding:12px;border-radius:10px;display:none}
+.ok{background:#12351f;color:#9be3b0;display:block}.err{background:#3a1717;color:#ffb3b3;display:block}
+.tag{display:inline-block;font-size:12px;background:#3a2a10;color:#ffd27a;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
+footer{text-align:center;font-size:13px;color:#8a94a8;padding:28px 0 40px}
+</style>
 </head>
-<body class="antialiased selection:bg-blue-600 selection:text-white">
+<body>
+<div class="top">Nhật ký tự luyện DELF B2 của một bác sĩ · Nhận bộ khởi động miễn phí</div>
+<div class="wrap">
+<header>
+  <h1>Tôi luyện DELF B2 theo cách bác sĩ đọc bệnh án.</h1>
+  <p class="sub">Tôi là bác sĩ huyết học, không phải giáo viên tiếng Pháp. Mỗi ngày tôi ghi lại một lỗi mình mắc khi tự ôn, cách tôi "chẩn đoán" nó và tấm thẻ tôi làm để không mắc lại. Bạn đang ôn B2? Học cùng tôi.</p>
+  <a class="btn b1" href="#bo-khoi-dong">Nhận bộ khởi động miễn phí</a>
+  <!-- TODO Quang: confirm the TikTok link -->
+  <a class="btn b2" href="https://www.youtube.com/@NguyenHugo-n6d" target="_blank" rel="noopener">Xem lỗi hôm nay (TikTok / YouTube)</a>
+</header>
 
-  <!-- TOP ANNOUNCEMENT BAR -->
-  <div class="bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-red-900/90 border-b border-white/10 px-4 py-2.5 text-center text-xs sm:text-sm font-medium">
-    <span class="inline-flex items-center gap-1.5">
-      <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <strong class="text-amber-300">Nhận FREE_KIT miễn phí ngay hôm nay</strong>
-      <a href="#pro-vault" class="underline decoration-amber-400 text-amber-300 hover:text-white ml-1 font-bold">Xem bảng so sánh →</a>
-    </span>
-  </div>
+<section id="bo-khoi-dong">
+  <h2>Bộ khởi động miễn phí</h2>
+  <p>Ba thứ tôi đang dùng mỗi ngày:</p>
+  <ul>
+    <li>30 thẻ Anki mẫu từ bộ thẻ tôi đang ôn, có âm thanh và giải thích.</li>
+    <li>Cẩm nang chiến thuật Đọc hiểu DELF B2 (PDF A4).</li>
+    <li>Cẩm nang tự đào câu tiếng Pháp từ video bằng asbplayer + Anki (PDF A4).</li>
+  </ul>
+  <p>Để lại email hoặc Zalo, tôi gửi link tải ngay và gửi thêm bản cập nhật mỗi tuần theo tiến độ ôn của tôi.</p>
 
-  <!-- HERO SECTION -->
-  <header class="max-w-5xl mx-auto px-4 pt-10 pb-8 text-center">
-    <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs sm:text-sm text-gray-300 mb-6">
-      <span>🩸 Bác sĩ & Giảng viên Huyết học</span>
-      <span class="text-gray-600">|</span>
-      <span>🇫🇷 Chuyên gia Hệ thống DELF B2–C1</span>
-      <span class="text-gray-600">|</span>
-      <span>🧠 Tư duy Nguyên bản & Feynman</span>
-    </div>
+  <form id="lead" novalidate>
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="ban@vidu.com">
+    <label for="zalo">Số Zalo</label>
+    <input id="zalo" name="zalo" type="tel" inputmode="tel" autocomplete="tel" placeholder="09xx xxx xxx">
+    <p class="hint">Chỉ cần một trong hai: email hoặc Zalo.</p>
+    <label for="vuong">Bạn đang vướng phần nào nhất?</label>
+    <textarea id="vuong" name="vuong" placeholder="Ví dụ: phần Nghe, từ nối trong bài Đọc, dàn bài phần Viết…"></textarea>
+    <label style="font-weight:400"><input type="checkbox" id="kit2" style="width:auto"> Tôi cũng muốn nhận bộ khởi động Huyết học (sinh viên y / nhân viên y tế)</label>
+    <button class="btn b1" type="submit" style="width:100%;margin:16px 0 0">Gửi và nhận bộ khởi động miễn phí</button>
+    <p class="hint">Tôi chỉ dùng thông tin này để gửi tài liệu và bản cập nhật hằng tuần. Bạn có thể nhắn "dừng" bất cứ lúc nào.</p>
+    <div id="msg" class="msg"></div>
+  </form>
+</section>
 
-    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-5">
-      Ngừng Học Vẹt. Hãy Cấy Ghép <br class="hidden sm:inline" />
-      <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-red-400 bg-clip-text text-transparent">
-        Phản Xạ Nhận Thức Dài Hạn
-      </span>
-    </h1>
+<section>
+  <h2>Tôi là ai</h2>
+  <p>Dr. Nguyen Hugo là bút danh của tôi. Tôi là bác sĩ, giảng viên huyết học, và đang tự luyện DELF B2.</p>
+  <p>Kỳ thi B2 có 4 phần, mỗi phần 25 điểm: Nghe, Đọc, Viết, Nói. Đỗ khi tổng từ 50/100 và không phần nào dưới 5/25. Nghĩa là không cần giỏi đều, nhưng không được để phần nào "suy". Tôi ôn theo đúng nguyên tắc đó và kể lại từng bước.</p>
+  <p>Tôi không hứa bạn đỗ. Tôi chia sẻ đúng những gì tôi làm và kết quả thật của tôi.</p>
+</section>
 
-    <p class="max-w-2xl mx-auto text-gray-400 text-sm sm:text-base leading-relaxed mb-8">
-      Nhiều người học tiếng Pháp B2–C1 và sinh viên Y khoa gặp khó không phải vì thiếu chăm chỉ, mà vì dùng sai công cụ ghi nhớ. Tại đây, mọi cơ chế phức tạp đều được giải phẫu từ <strong>Nguyên lý gốc (First Principles)</strong>, nén thành <strong>Ẩn dụ Feynman 30 giây</strong> và khóa chặt vào não bộ bằng <strong>Thẻ Anki Tình Huống Bẫy</strong>.
-    </p>
-
-    <!-- PILLAR FILTER TABS -->
-    <div class="inline-flex p-1 rounded-xl bg-gray-900 border border-gray-800 mb-4">
-      <button onclick="filterPillar('all')" id="tab-all" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-white text-gray-900 transition">
-        Tất cả Hệ thống (2 Trụ cột)
-      </button>
-      <button onclick="filterPillar('delf')" id="tab-delf" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition">
-        🇫🇷 Trụ cột 1: DELF B2–C1
-      </button>
-      <button onclick="filterPillar('hemato')" id="tab-hemato" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition">
-        🩸 Trụ cột 2: Huyết học Lâm sàng
-      </button>
-    </div>
-  </header>
-
-  <!-- INTERACTIVE DEMO -->
-  <section class="max-w-4xl mx-auto px-4 mb-14">
-    <div class="glass-card rounded-2xl p-5 sm:p-7 border border-blue-500/20">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-amber-400">⚡ Trải nghiệm thực tế 10 giây</span>
-          <h2 class="text-lg sm:text-xl font-bold text-white">Tại sao thẻ Anki & Sơ đồ của Dr. Hugo khác biệt hoàn toàn?</h2>
-        </div>
-        <span class="text-xs text-gray-400 italic">👆 Bấm vào thẻ bên dưới để lật xem mặt sau</span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Demo Card 1: DELF C1 -->
-        <div class="perspective cursor-pointer h-56" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
-          <div class="flip-card-inner relative w-full h-full">
-            <div class="flip-front absolute inset-0 bg-gray-900/90 border border-blue-500/40 rounded-xl p-5 flex flex-col justify-between">
-              <div class="flex justify-between items-center text-xs text-blue-400 font-mono">
-                <span>🇫🇷 MẪU THẺ ANKI DELF B2–C1 (#1042)</span>
-                <span class="bg-blue-500/10 px-2 py-0.5 rounded">Bấm để lật ↻</span>
-              </div>
-              <div>
-                <p class="text-xs text-gray-400 mb-1">Nâng cấp câu B1 tầm thường sau lên chuẩn C1 (Danh từ hóa + Từ nối):</p>
-                <p class="text-sm sm:text-base font-semibold text-white">« Même si le gouvernement a pris des mesures, le problème persiste. »</p>
-              </div>
-              <div class="text-xs text-amber-400">⚠️ Bẫy hay gặp: Lạm dụng "Même si" trong văn viết trang trọng.</div>
-            </div>
-            <div class="flip-back absolute inset-0 bg-blue-950/90 border border-blue-400 rounded-xl p-5 flex flex-col justify-between">
-              <div class="flex justify-between items-center text-xs text-emerald-300 font-mono">
-                <span>✅ ĐÁP ÁN C1 & AUDIO TTS</span>
-                <span>🔊 Audio TTS (03s)</span>
-              </div>
-              <div>
-                <p class="text-sm sm:text-base font-bold text-white mb-1">« <span class="text-amber-300 underline">En dépit de la mise en place</span> de mesures gouvernementales, force est de constater que le problème perdure. »</p>
-                <p class="text-xs text-gray-200">🧠 <strong>Công thức 80/20:</strong> <code>En dépit de + [Danh từ hóa]</code> + <code>Force est de constater que</code> (tăng điểm tiêu chí ngữ pháp).</p>
-              </div>
-              <div class="text-[11px] text-blue-300 font-mono">Thẻ mẫu do Dr. Hugo biên soạn</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Demo Card 2: Hematology -->
-        <!-- MEDICAL REVIEW: Dr. Hugo verify T315I/asciminib card text before any launch -->
-        <div class="perspective cursor-pointer h-56" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
-          <div class="flip-card-inner relative w-full h-full">
-            <div class="flip-front absolute inset-0 bg-gray-900/90 border border-red-500/40 rounded-xl p-5 flex flex-col justify-between">
-              <div class="flex justify-between items-center text-xs text-red-400 font-mono">
-                <span>🩸 MẪU THẺ BẪY HUYẾT HỌC (#CML-08)</span>
-                <span class="bg-red-500/10 px-2 py-0.5 rounded">Bấm để lật ↻</span>
-              </div>
-              <div>
-                <p class="text-xs text-gray-400 mb-1">Ca lâm sàng & Cơ chế gốc (First Principles):</p>
-                <p class="text-sm sm:text-base font-semibold text-white">Tại sao đột biến <code class="text-red-300">T315I</code> trong CML làm vô hiệu hóa TKI thế hệ 1–2, nhưng <strong>Asciminib</strong> vẫn tiêu diệt được tế bào đích?</p>
-              </div>
-              <div class="text-xs text-amber-400">🔍 Đừng học vẹt tên thuốc — Hãy giải thích bằng cơ chế ổ khóa không gian!</div>
-            </div>
-            <div class="flip-back absolute inset-0 bg-red-950/90 border border-red-400 rounded-xl p-5 flex flex-col justify-between">
-              <div class="flex justify-between items-center text-xs text-emerald-300 font-mono">
-                <span>✅ ẨN DỤ FEYNMAN 30 GIÂY</span>
-                <span>Nguồn: SFH / Blood</span>
-              </div>
-              <div>
-                <p class="text-xs sm:text-sm text-white leading-snug mb-1">
-                  <strong>Ẩn dụ Cửa Chính & Cầu Dao Phụ:</strong> T315I là kẻ gác cổng chặn đứng "cửa chính" gắn ATP. Thay vì đâm đầu vào cửa chính như Imatinib/Nilotinib, <strong>Asciminib (STAMP inhibitor)</strong> vòng ra sau lưng, đóng sập "hốc Myristoyl" (khóa dị lập thể), làm kẹt cứng cấu hình bất hoạt của BCR::ABL1!
-                </p>
-              </div>
-              <div class="text-[11px] text-red-200 font-mono">Đi kèm: Sơ đồ Mermaid 4K + Thuật ngữ Pháp-Việt</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STEP 1: FREE KITS -->
-  <section class="max-w-5xl mx-auto px-4 mb-16">
-    <div class="text-center mb-8">
-      <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono font-semibold uppercase">Bước 1: Kiểm chứng chất lượng (0đ)</span>
-      <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Tải Bộ Quà Khởi Động Miễn Phí</h2>
-      <p class="text-gray-400 text-sm mt-1">Trải nghiệm ngay phương pháp học nguyên bản trong 15 phút đầu tiên.</p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- FREE_KIT_01 -->
-      <div class="pillar-card pillar-delf glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-blue-500">
-        <div>
-          <div class="flex justify-between items-start mb-3">
-            <span class="text-xs font-mono bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md">FREE_KIT_01 • DELF B2–C1</span>
-            <span class="text-lg font-extrabold text-emerald-400">MIỄN PHÍ (0đ)</span>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Bộ Khởi Động Phản Xạ Pháp Ngữ B2–C1</h3>
-          <ul class="space-y-2 text-sm text-gray-300 mb-5">
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span><strong>30 thẻ Anki mẫu</strong> trích xuất từ hệ thống gốc (có âm thanh & giải thích).</span></li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span><strong>Cẩm nang Chiến thuật Đọc hiểu DELF B2 (v4.1)</strong> — Bản PDF A4 chuẩn hóa.</span></li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span><strong>Cẩm nang Đào câu Bản xứ bằng asbplayer + Anki (v1.0)</strong> — PDF A4 đầy đủ.</span></li>
-          </ul>
-          <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 mb-5">
-            <div class="flex justify-between text-xs mb-1">
-              <span class="text-gray-400">Độ phủ kiến thức so với bản Full:</span>
-              <span class="text-amber-400 font-mono font-bold">30 / 2.022 thẻ (1,5%)</span>
-            </div>
-            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-blue-500 h-full" style="width: 1.5%"></div>
-            </div>
-          </div>
-        </div>
-        <button onclick="triggerFreeDownload('FREE_KIT_01')" class="w-full py-3.5 px-5 rounded-xl bg-gray-800 hover:bg-gray-700 border border-blue-500/40 text-white font-bold text-sm transition flex items-center justify-center gap-2">
-          <span>📥 Tải Ngay FREE_KIT_01 (.ZIP / PDF)</span>
-        </button>
-      </div>
-
-      <!-- FREE_KIT_02 -->
-      <div class="pillar-card pillar-hemato glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-red-500">
-        <div>
-          <div class="flex justify-between items-start mb-3">
-            <span class="text-xs font-mono bg-red-500/10 text-red-400 px-2.5 py-1 rounded-md">FREE_KIT_02 • HUYẾT HỌC</span>
-            <span class="text-lg font-extrabold text-emerald-400">MIỄN PHÍ (0đ)</span>
-          </div>
-          <h3 class="text-xl font-bold text-white mb-2">Bộ Khởi Động Tư Duy Huyết Học Lâm Sàng</h3>
-          <ul class="space-y-2 text-sm text-gray-300 mb-5">
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span><strong>Sơ đồ tư duy tiếp cận chẩn đoán Thiếu máu</strong> theo nguyên lý gốc (PNG 4K + PDF).</span></li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span><strong>20 thẻ Anki thuật ngữ Huyết học Pháp–Việt</strong> cốt lõi kèm gốc từ nguyên học.</span></li>
-            <li class="flex items-start gap-2"><span class="text-emerald-400">✓</span> <span>Phân biệt rõ cơ chế sinh lý bệnh tại tủy xương và máu ngoại vi trong 30 giây.</span></li>
-          </ul>
-          <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 mb-5">
-            <div class="flex justify-between text-xs mb-1">
-              <span class="text-gray-400">Độ phủ chuyên đề so với bản Pro:</span>
-              <span class="text-amber-400 font-mono font-bold">01 / 05+ Chuyên đề lõi (15%)</span>
-            </div>
-            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-              <div class="bg-red-500 h-full" style="width: 15%"></div>
-            </div>
-          </div>
-        </div>
-        <button onclick="triggerFreeDownload('FREE_KIT_02')" class="w-full py-3.5 px-5 rounded-xl bg-gray-800 hover:bg-gray-700 border border-red-500/40 text-white font-bold text-sm transition flex items-center justify-center gap-2">
-          <span>📥 Tải Ngay FREE_KIT_02 (.ZIP / PDF)</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- STEP 2: PRO VAULT -->
-  <section id="pro-vault" class="max-w-5xl mx-auto px-4 mb-16">
-    <div class="text-center mb-10">
-      <span class="px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-mono font-semibold uppercase">Bước 2: Sở hữu Toàn bộ Hệ thống (Tiết kiệm hàng trăm giờ tự làm thẻ)</span>
-      <h2 class="text-2xl sm:text-4xl font-extrabold mt-2">Nâng Cấp Lên Kho Vũ Khí Toàn Diện (PRO PACK)</h2>
-      <p class="text-gray-400 text-sm sm:text-base mt-2 max-w-2xl mx-auto">
-        Bộ <code class="text-gray-300">FREE_KIT</code> giúp bạn hiểu phương pháp. Bộ <strong class="text-white">PRO_PACK</strong> trao cho bạn toàn bộ gia tài dữ liệu do chính Dr. Hugo biên soạn và rà soát và <strong>tự động bồi đắp thêm mỗi tối Chủ Nhật</strong> mà không cần trả thêm bất kỳ chi phí nào.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- PRO_PACK_01 -->
-      <div class="pillar-card pillar-delf glass-card glow-french rounded-3xl p-7 flex flex-col justify-between border-2 border-blue-500 relative">
-        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-extrabold px-3.5 py-1 rounded-full shadow-lg">
-          🇫🇷 TRỤ CỘT PHÁP NGỮ
-        </div>
-
-        <div>
-          <div class="text-xs font-mono text-blue-400 uppercase mb-1">PRO_PACK_01 • TRỤ CỘT PHÁP NGỮ</div>
-          <h3 class="text-2xl font-extrabold text-white mb-3">Kho 2.000+ Thẻ Anki & Chiến Thuật DELF B2–DALF C1</h3>
-
-          <div class="flex items-baseline gap-3 mb-6 pb-5 border-b border-gray-800">
-            <span class="text-3xl sm:text-4xl font-black text-white">299.000đ</span>
-            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-semibold">Thanh toán 1 lần • Sở hữu trọn đời</span>
-          </div>
-
-          <div class="space-y-3.5 text-sm text-gray-200 mb-7">
-            <div class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">01.</span>
-              <span><strong>2.022 thẻ Anki DELF B2 tự soạn (Phase-1 v4.1) có audio TTS.</strong></span>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">02.</span>
-              <span><strong>Trọn bộ Cẩm nang Chiến thuật v4.1 + Phụ lục Chuyên sâu (PDF A4):</strong> Công thức lắp ghép Danh từ hóa, Câu chẻ và Từ nối C1.</span>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="text-blue-400 font-bold">03.</span>
-              <span><strong>Bộ Đề Chẩn Đoán Năng Lực 100 Câu (Diag-100 v2.3) + Phiếu Chấm Nghe:</strong> Định vị chính xác lỗ hổng ngữ pháp & từ vựng để ôn trúng đích theo nguyên lý 80/20.</span>
-            </div>
-            <div class="flex items-start gap-2.5 bg-blue-950/50 p-3 rounded-xl border border-blue-500/30">
-              <span class="text-amber-400 text-base">♾️</span>
-              <span class="text-xs sm:text-sm"><strong>Đặc Quyền "Kho Sống" (Sunday Evergreen Drop):</strong> Tự động nhận thêm cấu trúc tranh biện C1 mới và thẻ tự soạn mới vào Chủ Nhật hằng tuần qua Google Drive!</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <button onclick="openCheckoutModal('PRO_PACK_01', 'Kho 2.022 Thẻ Anki DELF B2 tự soạn & Chiến Thuật DELF B2-C1', '299.000đ', '299000')" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-base shadow-lg transition transform hover:-translate-y-0.5">
-            ⚡ Sở Hữu Ngay PRO_PACK_01 (299.000đ)
-          </button>
-          <p class="text-center text-[11px] text-gray-400 mt-2.5">💡 Chi phí chỉ bằng 1 buổi học kèm, tiết kiệm hàng trăm giờ tự làm thẻ.</p>
-        </div>
-      </div>
-
-      <!-- PRO_PACK_02 -->
-      <div class="pillar-card pillar-hemato glass-card glow-hemato rounded-3xl p-7 flex flex-col justify-between border-2 border-red-500 relative">
-        <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-red-600 to-rose-600 text-white text-xs font-extrabold px-3.5 py-1 rounded-full shadow-lg">
-          🩸 EARLY BIRD V1.0 • CẬP NHẬT TRỌN ĐỜI
-        </div>
-
-        <div>
-          <div class="text-xs font-mono text-red-400 uppercase mb-1">PRO_PACK_02 • TRỤ CỘT Y KHOA</div>
-          <h3 class="text-2xl font-extrabold text-white mb-3">Kho Sơ Đồ Tư Duy Feynman 4K & Flashcard Huyết Học Lâm Sàng</h3>
-
-          <div class="flex items-baseline gap-3 mb-6 pb-5 border-b border-gray-800">
-            <span class="text-3xl sm:text-4xl font-black text-white">249.000đ</span>
-            <span class="text-xs bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded font-semibold">Mua 1 lần • Nhận cập nhật vĩnh viễn</span>
-          </div>
-
-          <div class="space-y-3.5 text-sm text-gray-200 mb-7">
-            <div class="flex items-start gap-2.5">
-              <span class="text-red-400 font-bold">01.</span>
-              <span><strong>Gói Lõi 05 Chuyên Đề Huyết Học Trọng Điểm (PDF A4 + Sơ đồ 4K):</strong> (1) Chẩn đoán Thiếu máu, (2) CML & Kháng TKI / Asciminib, (3) Đông cầm máu & DIC, (4) Đọc Tủy đồ & Phết máu ngoại vi, (5) Tai biến Truyền máu.</span>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="text-red-400 font-bold">02.</span>
-              <span><strong>120+ Thẻ Anki Ca Lâm Sàng Bẫy & Thuật Ngữ Pháp–Việt:</strong> Thiết kế theo lối đặt bẫy chẩn đoán phân biệt (Red Herring) giúp sinh viên Y & BSNT nhớ sâu cơ chế gốc.</span>
-            </div>
-            <div class="flex items-start gap-2.5">
-              <span class="text-red-400 font-bold">03.</span>
-              <span><strong>Đối chiếu y văn: SFH, HAS, ASH, PubMed/PMC.</strong></span>
-            </div>
-            <div class="flex items-start gap-2.5 bg-red-950/50 p-3 rounded-xl border border-red-500/30">
-              <span class="text-amber-400 text-base">♾️</span>
-              <span class="text-xs sm:text-sm"><strong>Cam kết cập nhật hằng tuần:</strong> Người mua gói sẽ được nhận miễn phí toàn bộ 2–3 chuyên đề + 30 thẻ mới mỗi Chủ Nhật!</span>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <button onclick="openCheckoutModal('PRO_PACK_02', 'Kho Sơ Đồ Feynman 4K & Flashcard Huyết Học Lâm Sàng', '249.000đ', '249000')" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-extrabold text-base shadow-lg transition transform hover:-translate-y-0.5">
-            ⚡ Sở Hữu Ngay PRO_PACK_02 (249.000đ)
-          </button>
-          <p class="text-center text-[11px] text-gray-400 mt-2.5">💡 Dành cho Sinh viên Y khoa, Bác sĩ Nội trú & Bác sĩ ôn thi DFMSA Pháp ngữ.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPARISON TABLE -->
-  <section class="max-w-4xl mx-auto px-4 mb-16">
-    <div class="glass-card rounded-2xl p-6 overflow-x-auto">
-      <h3 class="text-lg font-bold text-white mb-4 text-center">So Sánh Nhanh: Bản Khởi Động (FREE_KIT) vs. Hệ Thống Toàn Diện (PRO_PACK)</h3>
-      <table class="w-full text-left border-collapse text-xs sm:text-sm">
-        <thead>
-          <tr class="border-b border-gray-800 text-gray-400">
-            <th class="py-3 px-2">Hạng mục Giá trị</th>
-            <th class="py-3 px-2 text-center">FREE_KIT (0đ)</th>
-            <th class="py-3 px-2 text-center text-amber-400 font-bold">PRO_PACK (249k – 299k)</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-800/70 text-gray-300">
-          <tr>
-            <td class="py-3 px-2 font-medium">Mục đích thiết kế</td>
-            <td class="py-3 px-2 text-center">Hiểu phương pháp & Học thử 15 phút</td>
-            <td class="py-3 px-2 text-center font-semibold text-white">Cày phản xạ toàn diện để đi thi & lâm sàng</td>
-          </tr>
-          <tr>
-            <td class="py-3 px-2 font-medium">Số lượng thẻ Anki DELF B2–C1</td>
-            <td class="py-3 px-2 text-center">30 thẻ mẫu (1,5%)</td>
-            <td class="py-3 px-2 text-center font-bold text-blue-400">Trọn bộ 2.022 thẻ tự soạn (Phase-1 v4.1)</td>
-          </tr>
-          <tr>
-            <td class="py-3 px-2 font-medium">Sơ đồ Feynman & Flashcard Huyết học</td>
-            <td class="py-3 px-2 text-center">01 sơ đồ Thiếu máu + 20 thẻ</td>
-            <td class="py-3 px-2 text-center font-bold text-red-400">05+ Chuyên đề 4K + 120+ thẻ ca lâm sàng bẫy</td>
-          </tr>
-          <tr>
-            <td class="py-3 px-2 font-medium">Cập nhật nội dung mới mỗi Chủ Nhật</td>
-            <td class="py-3 px-2 text-center text-gray-500">✕ Không có</td>
-            <td class="py-3 px-2 text-center text-emerald-400 font-bold">✓ Có (Miễn phí trọn đời qua Google Drive)</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="max-w-5xl mx-auto px-4 py-10 border-t border-gray-800/80 text-center text-xs text-gray-500 space-y-3">
-    <div class="flex flex-wrap justify-center gap-4 text-gray-400 font-medium mb-2">
-      <a href="https://www.youtube.com/@NguyenHugo-n6d" target="_blank" class="hover:text-white">YouTube</a>
-      <span>•</span>
-      <a href="https://www.tiktok.com/@nguyen_hugo369" target="_blank" class="hover:text-white">TikTok</a>
-      <span>•</span>
-      <a href="https://www.instagram.com/hugonguyen5082026/" target="_blank" class="hover:text-white">Instagram</a>
-      <span>•</span>
-      <a href="https://www.threads.net/@hugonguyen5082026" target="_blank" class="hover:text-white">Threads</a>
-      <span>•</span>
-      <a href="mailto:hugonguyen508@gmail.com" class="hover:text-white">Liên hệ: hugonguyen508@gmail.com</a>
-    </div>
-    <p class="max-w-3xl mx-auto leading-relaxed">
-      <strong>Tuyên bố Miễn trừ Trách nhiệm Y khoa & Bản quyền:</strong> Tài liệu phục vụ mục đích đào tạo, giảng dạy và tham khảo học thuật dành cho sinh viên Y khoa / nhân viên y tế; không thay thế chỉ định khám chữa bệnh cá nhân.
-    </p>
-    <p>© 2026 Dr. Nguyen Hugo. Vận hành bởi Kiến trúc Cộng hưởng Tứ Giác Trí Tuệ V2.0.</p>
-  </footer>
-
-  <!-- MODAL 1: POST-DOWNLOAD UPSELL BRIDGE -->
-  <div id="upsell-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-gray-900 border-2 border-amber-500/60 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
-      <button onclick="closeModal('upsell-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
-      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-bold mb-3">
-        <span>✅ BỘ QUÀ MIỄN PHÍ ĐÃ SẴN SÀNG</span>
-      </div>
-      <h3 id="upsell-title" class="text-xl sm:text-2xl font-extrabold text-white mb-2">
-        Khoan đóng cửa sổ này! Bạn mới chỉ cầm trên tay 1,5% hệ thống...
-      </h3>
-      <p class="text-xs sm:text-sm text-gray-300 mb-4 leading-relaxed">
-        Bấm nút bên dưới để lấy ngay bộ <strong id="upsell-free-name" class="text-emerald-400">FREE_KIT</strong> của bạn. Nhưng nếu bạn thực sự nghiêm túc muốn làm chủ toàn bộ kiến thức mà không phải tự mày mò làm từng thẻ hay tự vẽ sơ đồ suốt hàng trăm giờ tới, hãy xem đặc quyền nâng cấp ngay lúc này:
-      </p>
-      <div class="bg-gray-800/80 p-3.5 rounded-xl border border-gray-700 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <span class="text-xs text-gray-300">📥 <strong>Link tải trực tiếp bộ miễn phí:</strong></span>
-        <a id="direct-free-link" href="#" target="_blank" class="w-full sm:w-auto text-center px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition">
-          Mở Google Drive Tải Ngay (0đ)
-        </a>
-      </div>
-      <div class="bg-gradient-to-br from-blue-950/80 to-indigo-950/80 p-4 rounded-2xl border border-amber-400/40 mb-5">
-        <div class="text-xs font-mono text-amber-300 uppercase font-bold mb-1">📌 BẢN FULL (CHƯA MỞ BÁN):</div>
-        <p id="upsell-pro-desc" class="text-xs sm:text-sm text-white font-medium mb-3">
-          Mở khóa toàn bộ <strong>2.022 thẻ Anki DELF B2 tự soạn (có audio TTS)</strong> + Đề chẩn đoán 100 câu + Nhận thẻ mới mỗi Chủ Nhật.
-        </p>
-        <button id="upsell-upgrade-btn" class="w-full py-3 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-gray-950 font-extrabold text-sm transition shadow-lg">
-          ⚡ Nâng Cấp Lên Bản PRO Ngay →
-        </button>
-      </div>
-      <button onclick="closeModal('upsell-modal')" class="w-full text-center text-xs text-gray-500 hover:text-gray-300">
-        Tôi muốn xem thử bản miễn phí trước, sẽ nâng cấp sau
-      </button>
-    </div>
-  </div>
-
-  <!-- MODAL 2: VIETQR & EMAIL CHECKOUT -->
-  <div id="checkout-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-gray-900 border-2 border-blue-500/60 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl my-8">
-      <button onclick="closeModal('checkout-modal')" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">✕</button>
-      <div class="text-xs font-mono text-blue-400 uppercase font-bold mb-1">CỔNG ĐĂNG KÝ & GIAO HÀNG BÁN TỰ ĐỘNG</div>
-      <h3 id="checkout-pack-title" class="text-xl font-extrabold text-white mb-1">PRO_PACK_01</h3>
-      <p id="checkout-pack-price" class="text-2xl font-black text-amber-400 mb-4">299.000đ</p>
-      <div id="vietqr-container" class="bg-gray-800/90 p-4 rounded-2xl border border-gray-700 mb-5 text-center">
-        <p class="text-xs text-gray-300 mb-3">
-          Quét mã <strong>VietQR Agribank</strong> bên dưới bằng bất kỳ ứng dụng Ngân hàng nào (Nội dung chuyển khoản: <code id="transfer-syntax" class="text-amber-300 font-bold">PRO1 + Email của bạn</code>):
-        </p>
-        <img src="assets/vietqr_agribank.jpg" alt="Mã thanh toán VietQR Agribank" onerror="this.style.display='none'; document.getElementById('qr-fallback-note').classList.remove('hidden');" class="w-52 h-52 object-contain mx-auto rounded-xl border border-white/10 bg-white p-2 mb-2" />
-        <div id="qr-fallback-note" class="hidden text-xs text-amber-300 bg-amber-500/10 p-3 rounded-lg border border-amber-500/30">
-          ⏳ <strong>Chưa mở bán.</strong> Hiện chỉ nhận FREE_KIT miễn phí.
-        </div>
-      </div>
-      <div class="space-y-3">
-        <label class="block text-xs text-gray-300 font-semibold">
-          Nhập Email nhận link Google Drive trọn đời của bạn:
-        </label>
-        <input id="buyer-email" type="email" placeholder="vidu: bacsi.minh@gmail.com" class="w-full px-4 py-3 rounded-xl bg-gray-950 border border-gray-700 text-white text-sm focus:outline-none focus:border-blue-500" />
-        <button onclick="submitOrderViaEmail()" class="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-sm shadow-lg transition">
-          ✉️ Xác Nhận Đơn & Gửi Biên Lai Nhận Link Ngay
-        </button>
-        <p class="text-[11px] text-gray-400 text-center leading-relaxed">
-          Ngay khi bạn bấm nút trên và đính kèm ảnh chụp biên lai vào email gửi tới <code class="text-gray-300">hugonguyen508@gmail.com</code>, trợ lý AI sẽ quét biên lai và thông báo cho Dr. Hugo mở quyền truy cập Google Drive cho bạn.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- JAVASCRIPT CONTROLLER -->
-  <script>
-    const PRODUCT_CONFIG = {
-      FREE_KIT_01: {
-        // TODO FREE_KIT_01 Drive URL
-        url: "mailto:hugonguyen508@gmail.com?subject=[FREE_KIT_01]%20Dang%20ky%20nhan%20bo%2030%20the%20Anki%20DELF%20B2%20%2B%20Cam%20nang%20v4.1&body=Chao%20Dr.%20Hugo,%20xin%20gui%20cho%20toi%20link%20tai%20bo%20FREE_KIT_01%20(DELF%20B2-C1)%20qua%20email%20nay.",
-        upsellSku: "PRO_PACK_01",
-        upsellTitle: "PRO_PACK_01: Kho 2.022 Thẻ Anki DELF B2 tự soạn",
-        upsellPrice: "299.000đ",
-        upsellRaw: "299000",
-        gapText: "Bạn mới chỉ cầm trên tay 30 thẻ (1,5% hệ thống). Nâng cấp ngay lên trọn bộ 2.022 thẻ Anki DELF B2 tự soạn (có audio TTS) + Đề chẩn đoán 100 câu (chưa mở bán)."
-      },
-      FREE_KIT_02: {
-        // TODO FREE_KIT_02 Drive URL
-        url: "mailto:hugonguyen508@gmail.com?subject=[FREE_KIT_02]%20Dang%20ky%20nhan%20So%20do%20Thieu%20mau%204K%20%2B%2020%20the%20Huyet%20hoc&body=Chao%20Dr.%20Hugo,%20xin%20gui%20cho%20toi%20link%20tai%20bo%20FREE_KIT_02%20(Huyet%20hoc)%20qua%20email%20nay.",
-        upsellSku: "PRO_PACK_02",
-        upsellTitle: "PRO_PACK_02: Kho Sơ Đồ Feynman 4K & Flashcard Huyết Học",
-        upsellPrice: "249.000đ",
-        upsellRaw: "249000",
-        gapText: "Bạn mới chỉ xem 1 sơ đồ Thiếu máu. Sở hữu trọn bộ 05 Chuyên đề Huyết học cốt lõi (PDF + Sơ đồ 4K) + 120 thẻ ca lâm sàng bẫy (chưa mở bán)."
-      }
-    };
-
-    let currentSelectedSku = "PRO_PACK_01";
-    let currentSelectedPrice = "299.000đ";
-
-    function filterPillar(pillar) {
-      const cards = document.querySelectorAll('.pillar-card');
-      const tabs = ['all', 'delf', 'hemato'];
-      tabs.forEach(t => {
-        const btn = document.getElementById('tab-' + t);
-        if (t === pillar) {
-          btn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-white text-gray-900 transition";
-        } else {
-          btn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-400 hover:text-white transition";
-        }
-      });
-      cards.forEach(card => {
-        if (pillar === 'all') {
-          card.style.display = 'flex';
-        } else if (card.classList.contains('pillar-' + pillar)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    function triggerFreeDownload(kitCode) {
-      const cfg = PRODUCT_CONFIG[kitCode];
-      document.getElementById('upsell-free-name').innerText = kitCode;
-      document.getElementById('direct-free-link').href = cfg.url;
-      document.getElementById('upsell-pro-desc').innerText = cfg.gapText;
-      const upgradeBtn = document.getElementById('upsell-upgrade-btn');
-      upgradeBtn.onclick = function() {
-        closeModal('upsell-modal');
-        openCheckoutModal(cfg.upsellSku, cfg.upsellTitle, cfg.upsellPrice, cfg.upsellRaw);
-      };
-      document.getElementById('upsell-modal').classList.remove('hidden');
-    }
-
-    function openCheckoutModal(sku, title, priceText, rawPrice) {
-      currentSelectedSku = sku;
-      currentSelectedPrice = priceText;
-      document.getElementById('checkout-pack-title').innerText = title;
-      document.getElementById('checkout-pack-price').innerText = priceText;
-      document.getElementById('transfer-syntax').innerText = sku + " + Email của bạn";
-      document.getElementById('checkout-modal').classList.remove('hidden');
-    }
-
-    function closeModal(modalId) {
-      document.getElementById(modalId).classList.add('hidden');
-    }
-
-    function submitOrderViaEmail() {
-      const email = document.getElementById('buyer-email').value.trim() || "[Điền_Email_Của_Bạn]";
-      const subject = encodeURIComponent(`[ORDER_${currentSelectedSku}] Xac nhan dang ky & Thanh toan (${email})`);
-      const body = encodeURIComponent(
-        `Chào Dr. Nguyen Hugo,\n\n` +
-        `Tôi vừa thực hiện đăng ký gói sản phẩm:\n` +
-        `- Mã gói (SKU): ${currentSelectedSku}\n` +
-        `- Mức phí: ${currentSelectedPrice}\n` +
-        `- Email nhận quyền truy cập Google Drive trọn đời: ${email}\n\n` +
-        `[HƯỚNG DẪN: Vui lòng đính kèm ảnh chụp màn hình biên lai chuyển khoản VietQR vào email này trước khi bấm Gửi để hệ thống tự động xác minh và mở khóa kho tài liệu cho bạn trong thời gian sớm nhất!]`
-      );
-      window.location.href = `mailto:hugonguyen508@gmail.com?subject=${subject}&body=${body}`;
-    }
-  </script>
+<section>
+  <h2>Huyết học <span class="tag">đang xây dựng</span></h2>
+  <p>Phần dành cho sinh viên y: sơ đồ và thẻ huyết học tôi dùng khi giảng dạy. Hiện có bộ khởi động miễn phí: sơ đồ tiếp cận thiếu máu và 20 thẻ thuật ngữ Pháp – Việt.</p>
+  <p class="hint">Tài liệu phục vụ mục đích đào tạo, giảng dạy và tham khảo học thuật dành cho sinh viên Y khoa / nhân viên y tế; không thay thế chỉ định khám chữa bệnh cá nhân.</p>
+</section>
+</div>
+<footer>
+  <p>Liên hệ: hugonguyen508@gmail.com</p>
+  <p>Tài liệu phục vụ học tập. Phần huyết học dành cho sinh viên y và nhân viên y tế, không thay thế chỉ định khám chữa bệnh.</p>
+</footer>
+<script>
+/* ==== CONFIG: Quang tạo Google Form bằng tài khoản của anh rồi điền vào đây ====
+   FORM_ACTION: https://docs.google.com/forms/d/e/<FORM_ID>/formResponse
+   ENTRY_*: mã entry.xxxxxxx của từng câu hỏi (lấy từ "Lấy đường liên kết điền sẵn").
+   Còn để PLACEHOLDER thì form KHÔNG gửi đi đâu cả và báo rõ cho người dùng. */
+const CONFIG = {
+  FORM_ACTION: "PLACEHOLDER_GOOGLE_FORM_FORMRESPONSE_URL",
+  ENTRY_EMAIL: "entry.PLACEHOLDER_EMAIL",
+  ENTRY_ZALO:  "entry.PLACEHOLDER_ZALO",
+  ENTRY_VUONG: "entry.PLACEHOLDER_VUONG",
+  ENTRY_KIT:   "entry.PLACEHOLDER_KIT"
+};
+document.getElementById('lead').addEventListener('submit', async e => {
+  e.preventDefault();
+  const m = document.getElementById('msg'), em = email.value.trim(), za = zalo.value.trim();
+  m.className = 'msg';
+  if (!em && !za) { m.textContent = 'Bạn điền email hoặc số Zalo giúp tôi nhé.'; m.className = 'msg err'; return; }
+  if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { m.textContent = 'Email chưa đúng định dạng.'; m.className = 'msg err'; return; }
+  if (za && !/^[0-9+\s.]{9,15}$/.test(za)) { m.textContent = 'Số Zalo chưa đúng định dạng.'; m.className = 'msg err'; return; }
+  if (CONFIG.FORM_ACTION.startsWith('PLACEHOLDER')) {
+    const kit = kit2.checked ? 'DELF + Huyết học' : 'DELF';
+    const body = 'Chào Dr. Hugo, tôi muốn nhận bộ khởi động miễn phí (' + kit + ').\nEmail: ' + em + '\nZalo: ' + za + '\nTôi đang vướng: ' + vuong.value.trim();
+    m.innerHTML = 'Bạn bấm Gửi trong thư vừa mở giúp tôi nhé. Nếu thư không mở được (trong TikTok/Facebook), hãy mở trang bằng trình duyệt ngoài hoặc gửi thông tin trên tới <b>hugonguyen508@gmail.com</b>.'; m.className = 'msg ok';
+    location.href = 'mailto:hugonguyen508@gmail.com?subject=' + encodeURIComponent('[FREE_KIT] Đăng ký bộ khởi động') + '&body=' + encodeURIComponent(body);
+    return;
+  }
+  const d = new FormData();
+  d.append(CONFIG.ENTRY_EMAIL, em); d.append(CONFIG.ENTRY_ZALO, za);
+  d.append(CONFIG.ENTRY_VUONG, vuong.value.trim());
+  d.append(CONFIG.ENTRY_KIT, kit2.checked ? 'DELF + Huyết học' : 'DELF');
+  try {
+    await fetch(CONFIG.FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d });
+    m.textContent = 'Đã nhận! Tôi sẽ gửi link tải qua email hoặc Zalo bạn để lại.'; m.className = 'msg ok';
+    e.target.reset();
+  } catch (_) { m.textContent = 'Gửi chưa được, bạn thử lại giúp tôi.'; m.className = 'msg err'; }
+});
+</script>
 </body>
 </html>
