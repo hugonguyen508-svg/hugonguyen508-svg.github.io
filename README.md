@@ -21,7 +21,7 @@
 
 ### Bản Full — Trọn bộ Master Deck Anki DELF B2–C1
 
-**299.000đ** — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ chỗ** (gửi email tới <hugonguyen508@gmail.com>). Nội dung (số liệu đã kiểm chứng):
+**Chưa mở bán** — hiện chỉ nhận FREE_KIT miễn phí. Nội dung (số liệu đã kiểm chứng):
 
 - **2.022 thẻ** từ vựng & cấu trúc giai đoạn 1 — từng nghĩa đã kiểm tra thủ công.
 - **Tổng cộng: 2.022 thẻ Anki tự soạn (Phase-1 v4.1), audio TTS.**
@@ -39,7 +39,7 @@
 
 ### Bản Full — Bộ Flashcard Anki Huyết học – Truyền máu & Cẩm nang tóm tắt
 
-**249.000đ** — **Mở cổng thanh toán tự động ngày 09/11 — Đăng ký giữ chỗ** (gửi email tới <hugonguyen508@gmail.com>). Bộ flashcard Anki và cẩm nang tóm tắt cơ chế bệnh sinh / phác đồ điều trị chuẩn y văn đang được biên soạn.
+**Chưa mở bán** — hiện chỉ nhận FREE_KIT miễn phí. Bộ flashcard Anki và cẩm nang tóm tắt cơ chế bệnh sinh / phác đồ điều trị chuẩn y văn đang được biên soạn.
 
 ## Theo dõi Dr. Nguyen Hugo
 

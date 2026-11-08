@@ -47,10 +47,7 @@
 <!-- LEA_TRIAL_GATE_2026-11-07 -->
 <script>
 (function(){
-  // Trial: hide PRO prices + VietQR until 2026-11-09 00:00 Asia/Saigon (UTC+7)
-  var openAt = Date.parse('2026-11-08T17:00:00Z'); // 09/11 00:00 +07
-  var trial = Date.now() < openAt;
-  if (!trial) return;
+  // Sales postponed (Hugo, 08/11): PRO prices/VietQR hidden indefinitely; FREE_KIT only. Remove only when Hugo sets a launch date.
   document.documentElement.classList.add('trial-mode-prelaunch');
   var style = document.createElement('style');
   style.textContent = '.trial-mode-prelaunch .pro-price, .trial-mode-prelaunch [onclick*="openCheckoutModal"], .trial-mode-prelaunch #checkout-modal, .trial-mode-prelaunch img[alt*="VietQR"] { display: none !important; }';
@@ -66,7 +63,7 @@
         b.style.display = 'none';
         var note = document.createElement('p');
         note.className = 'text-center text-sm text-amber-300 mt-2';
-        note.textContent = 'Mở bán 00:00 ngày 09/11 · Hiện chỉ TẢI MIỄN PHÍ FREE_KIT';
+        note.textContent = 'Hiện chỉ nhận TẢI MIỄN PHÍ FREE_KIT';
         b.parentNode && b.parentNode.appendChild(note);
       }
     });
@@ -81,7 +78,7 @@
   <div class="bg-gradient-to-r from-blue-900/90 via-indigo-900/90 to-red-900/90 border-b border-white/10 px-4 py-2.5 text-center text-xs sm:text-sm font-medium">
     <span class="inline-flex items-center gap-1.5">
       <span class="h-2 w-2 rounded-full bg-emerald-400 animate-ping"></span>
-      <strong class="text-amber-300">Mở bán 00:00 ngày 09/11 • Nhận FREE_KIT ngay hôm nay</strong>
+      <strong class="text-amber-300">Nhận FREE_KIT miễn phí ngay hôm nay</strong>
       <a href="#pro-vault" class="underline decoration-amber-400 text-amber-300 hover:text-white ml-1 font-bold">Xem bảng so sánh →</a>
     </span>
   </div>
@@ -162,7 +159,7 @@
         </div>
 
         <!-- Demo Card 2: Hematology -->
-        <!-- MEDICAL REVIEW: Dr. Hugo verify T315I/asciminib card text before 09/11 -->
+        <!-- MEDICAL REVIEW: Dr. Hugo verify T315I/asciminib card text before any launch -->
         <div class="perspective cursor-pointer h-56" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
           <div class="flip-card-inner relative w-full h-full">
             <div class="flip-front absolute inset-0 bg-gray-900/90 border border-red-500/40 rounded-xl p-5 flex flex-col justify-between">
@@ -464,7 +461,7 @@
         </p>
         <img src="assets/vietqr_agribank.jpg" alt="Mã thanh toán VietQR Agribank" onerror="this.style.display='none'; document.getElementById('qr-fallback-note').classList.remove('hidden');" class="w-52 h-52 object-contain mx-auto rounded-xl border border-white/10 bg-white p-2 mb-2" />
         <div id="qr-fallback-note" class="hidden text-xs text-amber-300 bg-amber-500/10 p-3 rounded-lg border border-amber-500/30">
-          ⏳ <strong>Chế độ Giữ chỗ (Mở cổng tự động 00:00 ngày 09/11):</strong> Bấm nút "Gửi Email Xác Nhận" bên dưới để hệ thống giữ chỗ cho bạn và gửi mã QR thanh toán trực tiếp qua Email của bạn!
+          ⏳ <strong>Chưa mở bán.</strong> Hiện chỉ nhận FREE_KIT miễn phí.
         </div>
       </div>
       <div class="space-y-3">
