@@ -41,7 +41,7 @@ footer{text-align:center;font-size:13px;color:#8a94a8;padding:28px 0 40px}
     <li>Cẩm nang chiến thuật Đọc hiểu DELF B2 (PDF A4).</li>
     <li>Cẩm nang tự đào câu tiếng Pháp từ video bằng asbplayer + Anki (PDF A4).</li>
   </ul>
-  <p>Để lại email hoặc Zalo, tôi gửi link tải ngay và gửi thêm bản cập nhật mỗi tuần theo tiến độ ôn của tôi.</p>
+  <p>Để lại email hoặc Zalo, tôi gửi link tải bộ khởi động cho bạn. Nếu muốn, bạn có thể tick thêm để nhận bản cập nhật mỗi tuần theo tiến độ ôn của tôi.</p>
 
   <form id="lead" novalidate>
     <label for="email">Email</label>
@@ -52,8 +52,9 @@ footer{text-align:center;font-size:13px;color:#8a94a8;padding:28px 0 40px}
     <label for="vuong">Bạn đang vướng phần nào nhất?</label>
     <textarea id="vuong" name="vuong" placeholder="Ví dụ: phần Nghe, từ nối trong bài Đọc, dàn bài phần Viết…"></textarea>
     <label style="font-weight:400"><input type="checkbox" id="kit2" style="width:auto"> Tôi cũng muốn nhận bộ khởi động Huyết học (sinh viên y / nhân viên y tế)</label>
+    <label style="font-weight:400"><input type="checkbox" id="capnhat" style="width:auto"> Tôi muốn nhận bản cập nhật hằng tuần về tiến độ ôn DELF qua email/Zalo (không bắt buộc).</label>
     <button class="btn b1" type="submit" style="width:100%;margin:16px 0 0">Gửi và nhận bộ khởi động miễn phí</button>
-    <p class="hint">Tôi chỉ dùng thông tin này để gửi tài liệu và bản cập nhật hằng tuần. Bạn có thể nhắn "dừng" bất cứ lúc nào.</p>
+    <p class="hint">Bạn để lại email hoặc số Zalo (và điều bạn đang vướng, nếu muốn) để nhận bộ khởi động. Bản cập nhật hằng tuần chỉ gửi khi bạn tick ô ở trên. Dữ liệu lưu trên Google Form/Google Sheet do Dr. Nguyen Hugo quản lý, chỉ dùng cho đúng mục đích bạn chọn và không chia sẻ cho ai. Muốn xem, sửa, xoá thông tin hoặc ngừng nhận cập nhật, bạn nhắn "dừng" hoặc "xoá" tới hugonguyen508@gmail.com; tôi trả lời trong 2 ngày làm việc.</p>
     <div id="msg" class="msg"></div>
   </form>
 </section>
@@ -85,7 +86,8 @@ const CONFIG = {
   ENTRY_EMAIL: "entry.1746987161",
   ENTRY_ZALO:  "entry.917031973",
   ENTRY_VUONG: "entry.1877085839",
-  ENTRY_KIT:   "entry.963035027"
+  ENTRY_KIT:   "entry.963035027",
+  ENTRY_CONSENT: "entry.1793690068"
 };
 document.getElementById('lead').addEventListener('submit', async e => {
   e.preventDefault();
@@ -96,7 +98,7 @@ document.getElementById('lead').addEventListener('submit', async e => {
   if (za && !/^[0-9+\s.]{9,15}$/.test(za)) { m.textContent = 'Số Zalo chưa đúng định dạng.'; m.className = 'msg err'; return; }
   if (CONFIG.FORM_ACTION.startsWith('PLACEHOLDER')) {
     const kit = kit2.checked ? 'DELF + Huyết học' : 'DELF';
-    const body = 'Chào Dr. Hugo, tôi muốn nhận bộ khởi động miễn phí (' + kit + ').\nEmail: ' + em + '\nZalo: ' + za + '\nTôi đang vướng: ' + vuong.value.trim();
+    const body = 'Chào Dr. Hugo, tôi muốn nhận bộ khởi động miễn phí (' + kit + ').\nEmail: ' + em + '\nZalo: ' + za + '\nTôi đang vướng: ' + vuong.value.trim() + '\nNhận cập nhật hằng tuần: ' + (capnhat.checked ? 'Có' : 'Không');
     m.innerHTML = 'Bạn bấm Gửi trong thư vừa mở giúp tôi nhé. Nếu thư không mở được (trong TikTok/Facebook), hãy mở trang bằng trình duyệt ngoài hoặc gửi thông tin trên tới <b>hugonguyen508@gmail.com</b>.'; m.className = 'msg ok';
     location.href = 'mailto:hugonguyen508@gmail.com?subject=' + encodeURIComponent('[FREE_KIT] Đăng ký bộ khởi động') + '&body=' + encodeURIComponent(body);
     return;
@@ -105,6 +107,7 @@ document.getElementById('lead').addEventListener('submit', async e => {
   d.append(CONFIG.ENTRY_EMAIL, em); d.append(CONFIG.ENTRY_ZALO, za);
   d.append(CONFIG.ENTRY_VUONG, vuong.value.trim());
   d.append(CONFIG.ENTRY_KIT, kit2.checked ? 'DELF + Huyết học' : 'DELF');
+  d.append(CONFIG.ENTRY_CONSENT, capnhat.checked ? 'CÓ: Tôi muốn nhận bản cập nhật hằng tuần về tiến độ ôn DELF qua email/Zalo' : 'KHÔNG');
   try {
     await fetch(CONFIG.FORM_ACTION, { method: 'POST', mode: 'no-cors', body: d });
     m.textContent = 'Đã nhận! Tôi sẽ gửi link tải qua email hoặc Zalo bạn để lại.'; m.className = 'msg ok';
